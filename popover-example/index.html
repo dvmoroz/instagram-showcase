@@ -1,0 +1,137 @@
+<html>
+
+<head>
+  <title>title</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="popover">
+      <button popovertarget="my-popover" class="open-btn">Open Popover</button>
+      <div popover id="my-popover">
+        <h1>How does it work?</h1>
+        <span>The Popover API provides developers with a standard, consistent, flexible mechanism for displaying popover
+          content on top of other page content. Popover content can be controlled either declaratively using HTML
+          attributes, or via JavaScript.</span>
+        <div class="close-btn__wrapper">
+          <button popovertarget="my-popover" popoveraction="hide" class="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
+<style>
+  .wrapper {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .popover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper::backdrop {
+    background: rgba(255, 0, 0, 0.25);
+  }
+
+  .open-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 200px;
+  }
+
+  #my-popover {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid white;
+    max-width: 500px;
+    text-align: center;
+
+    /* Animation */
+    animation-name: slideDown;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #my-popover::backdrop {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .close-btn {
+    display: block;
+    padding: 8px 12px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .close-btn__wrapper {
+    display: flex;
+  }
+
+  .close-btn:hover {
+    background-color: #cc0000;
+  }
+
+  .close-btn:focus {
+    outline: none;
+  }
+
+  .close-btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Animation keyframes */
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+</style>
+
+</html>
