@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
+</head>
+
+<body>
+
+  <nav id="element1">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="jumbotron" id="element2">
+      <h1>Welcome to Our Website</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec diam nec eros cursus facilisis.</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+    <section class="about-us" id="element3">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec diam nec eros cursus facilisis.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" id="element4">
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const driver = window.driver.js.driver;
+
+    const driverObj = driver({
+      showProgress: true,
+      showButtons: ['next', 'previous'],
+      steps: [
+        { element: '#element1', popover: { title: 'Navigation menu', description: 'This is the navigation menu description', side: "left", align: 'start' } },
+        { element: '#element2', popover: { title: 'Jumbotron element', description: 'This is the jumbortron element description', side: "bottom", align: 'start' } },
+        { element: '#element3', popover: { title: 'About us section', description: 'This is the "about us" section description', side: "bottom", align: 'start' } },
+        { element: '#element4', popover: { title: 'Footer element', description: 'This is the footer element description', side: "left", align: 'start' } },
+      ]
+    });
+
+    driverObj.drive();
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .el {
+      border: 1px solid red;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+
+    .jumbotron {
+      background-color: #4287f5;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+      margin: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: pulsate 2s infinite;
+    }
+
+    .jumbotron h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .jumbotron .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .jumbotron .btn:hover {
+      background-color: #555;
+    }
+
+    .about-us {
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 50px 20px;
+
+    }
+
+    .about-us h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .about-us p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content {
+      flex: 1;
+      padding: 50px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: sticky;
+      bottom: 0;
+    }
+  </style>
+</body>
+
+</html>
